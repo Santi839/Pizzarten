@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzarten | Inicio</title>
+    <link rel="icon" type="image/png" href="./assets/img/logo-pizzarten.png?v=2">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div id="global-navbar"></div>
+
+    <section id="admin-panel" class="admin-panel hidden">
+        <div class="admin-container">
+            <h3>Panel de Control</h3>
+            <button class="btn-secondary" onclick="addProduct()">+ Nueva Pizza</button>
+            <button class="btn-secondary delete" onclick="resetFactory()"> Restaurar Fábrica</button>
+        </div>
+    </section>
+
+    <header id="hero" class="hero">
+        <div class="hero-content" id="hero-content"></div>
+    </header>
+
+    <section id="menu" class="section-padding">
+        <h2 class="section-title">Galería de Sabores</h2>
+        <div class="grid-container" id="menu-container"></div>
+    </section>
+    
+    <section id="combos" class="section-padding dark-section">
+        <h2 class="section-title">Colecciones (Combos)</h2>
+        <div class="grid-container" id="combos-container"></div>
+    </section>
+
+    <div id="global-footer"></div>
+
+    <div id="global-modal"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Pedido | Pizzarten</title>
+    <link rel="icon" type="image/png" href="./assets/img/logo-pizzarten.png?v=2">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+    <div id="global-navbar"></div>
+
+    <section class="section-padding cart-section">
+        <h1 class="section-title">Tu Pedido</h1>
+        
+        <div class="cart-layout">
+            <div class="cart-list" id="cart-items-container">
+                </div>
+
+            <div class="cart-summary">
+                <h3>Resumen</h3>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío</span>
+                    <span>$2.00</span>
+                </div>
+                <hr style="border-color:#333; margin: 15px 0;">
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="cart-final-total" class="highlight">$0.00</span>
+                </div>
+                
+                <button class="btn-primary full-width" onclick="checkout()" style="margin-top: 20px;">
+                    CONFIRMAR PEDIDO
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="global-footer"></div>
+    <div id="global-modal"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
