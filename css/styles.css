@@ -159,9 +159,32 @@ body { background-color: var(--bg-main); color: var(--text-white); }
 ========================================= */
 .about-hero {
     height: 60vh;
-    display: flex; justify-content: center; align-items: center; text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-    background-size: cover; background-position: center; background-attachment: fixed;
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    /* Añadimos padding para móviles */
+    padding: 0 20px; 
+}
+
+/* IGUALAMOS LA TIPOGRAFÍA CON EL HOME (.hero) */
+.about-hero h1 { 
+    font-size: 3.5rem; /* Antes 3rem -> Ahora 3.5rem (Igual que Inicio) */
+    line-height: 1.2; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+}
+
+.about-hero p { 
+    font-size: 1.2rem; /* Antes 1.3rem -> Ahora 1.2rem (Igual que Inicio) */
+    color: var(--text-gray); 
+    font-style: italic;
+    max-width: 700px; /* Para que no se estire demasiado a los lados */
+    margin: 0 auto;   /* Centrado */
 }
 .split-container { display: flex; align-items: center; gap: 4rem; }
 .split-text { flex: 1; }
