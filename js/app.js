@@ -70,40 +70,52 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // --- 3. COMPONENTES GLOBALES ---
 function injectGlobalComponents() {
+    // NAVBAR (Con botón hamburguesa agregado)
     const navbarHTML = `
         <nav class="navbar">
-            <div class="logo" onclick="location.href='index.html'" style="cursor:pointer;">
-                PIZZ<span class="highlight">ARTEN</span>
+            <div class="nav-header">
+                <div class="logo" onclick="location.href='index.html'" style="cursor:pointer;">
+                    PIZZ<span class="highlight">ARTEN</span>
+                </div>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#menu">Menú</a></li>
-                <li><a href="about.html">Nosotros</a></li>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" onclick="toggleMenu()">Inicio</a></li>
+                <li><a href="index.html#menu" onclick="toggleMenu()">Menú</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">Nosotros</a></li>
                 <li>
-                    <a href="cart.html" class="cart-link">
+                    <a href="cart.html" class="cart-link" onclick="toggleMenu()">
                         <i class="fas fa-shopping-cart"></i> 
                         <span id="cart-count" class="badge-count">0</span>
                     </a>
                 </li>
-                <li id="auth-btn" onclick="openModal()">Acceder</li>
+                
+                <li id="auth-btn" onclick="openModal(); toggleMenu()">Acceder</li>
+                
                 <li id="user-display" class="hidden">
                     <span id="username-span">USER</span> 
-                    <i class="fas fa-sign-out-alt" onclick="logout()" title="Cerrar Sesión" style="cursor:pointer; margin-left:10px; color:var(--primary);"></i>
+                    <i class="fas fa-sign-out-alt" onclick="logout(); toggleMenu()" title="Salir" style="cursor:pointer; margin-left:10px; color:var(--primary);"></i>
                 </li>
             </ul>
         </nav>
     `;
 
+    // FOOTER (Sin cambios)
     const footerHTML = `
         <footer>
             <p>© 2025 Pizzarten. Donde la cocina se encuentra con el diseño.</p>
             <div style="margin-top:10px; font-size: 1.5rem;">
                 <i class="fab fa-instagram" style="margin:0 10px; cursor:pointer;"></i>
                 <i class="fab fa-facebook" style="margin:0 10px; cursor:pointer;"></i>
+                <i class="fab fa-whatsapp" style="margin:0 10px; cursor:pointer;"></i>
             </div>
         </footer>
     `;
 
+    // MODAL (Sin cambios)
     const modalHTML = `
         <div id="login-modal" class="modal hidden">
             <div class="modal-content">
@@ -574,4 +586,11 @@ function resetFactory() {
             location.reload();
         }
     });
+}
+
+function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    if(nav) {
+        nav.classList.toggle('active');
+    }
 }

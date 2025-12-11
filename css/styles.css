@@ -311,3 +311,150 @@ footer { padding: 40px; text-align: center; border-top: 1px solid #333; margin-t
     .details-image { margin-bottom: 20px; }
     .cart-summary { order: -1; margin-bottom: 20px; } /* Muestra resumen arriba en móvil */
 }
+
+/* =========================================
+   RESPONSIVE DESIGN (MÓVIL Y TABLET)
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* --- 1. NAVBAR MÓVIL --- */
+    .navbar {
+        flex-direction: column;
+        align-items: stretch; /* Ocupar todo el ancho */
+        padding: 15px 5%;
+    }
+
+    .nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar hamburguesa */
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--primary);
+    }
+
+    .nav-links {
+        display: none; /* Ocultar menú por defecto */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        background-color: var(--bg-card);
+        border-radius: 10px;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    /* Clase que agrega JS al hacer click */
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- 2. TEXTOS Y HERO --- */
+    .hero h1 {
+        font-size: 2.2rem; /* Texto más pequeño */
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* --- 3. MENÚ Y GRID --- */
+    .grid-container, .menu-grid {
+        /* Una sola columna en móvil */
+        grid-template-columns: 1fr; 
+        padding: 0 10px;
+    }
+
+    /* --- 4. PÁGINA DETALLES (Producto) --- */
+    .details-wrapper {
+        flex-direction: column; /* Apilar imagen y texto */
+        gap: 2rem;
+    }
+    
+    .details-image img {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .details-info h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .detail-actions {
+        flex-direction: column; /* Botón debajo del precio */
+        gap: 15px;
+        width: 100%;
+    }
+
+    .btn-primary {
+        width: 100%; /* Botones full ancho en móvil */
+    }
+
+    /* --- 5. PÁGINA CARRITO --- */
+    .cart-layout {
+        flex-direction: column;
+    }
+    
+    .cart-summary {
+        order: -1; /* Poner resumen arriba en móvil */
+        margin-bottom: 2rem;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        position: relative;
+    }
+    
+    .cart-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .btn-delete-icon {
+        position: absolute;
+        top: 15px;
+        right: 0;
+    }
+
+    /* --- 6. PÁGINA ABOUT US --- */
+    .split-container {
+        flex-direction: column; /* Texto arriba, foto abajo */
+    }
+    
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .team-card {
+        flex-direction: column;
+    }
+    
+    .team-img {
+        height: 300px;
+    }
+}
+
+/* --- ESTILOS BASE PARA EL TOGGLE EN ESCRITORIO --- */
+.menu-toggle {
+    display: none; /* Ocultar hamburguesa en PC */
+}
